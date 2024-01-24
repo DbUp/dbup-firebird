@@ -3,35 +3,26 @@
   <PropertyGroup>
     <Description>DbUp makes it easy to deploy and upgrade SQL Server databases. This package adds Firebird support.</Description>
     <Title>DbUp Firebird Support</Title>
-    <TargetFrameworks>netstandard1.3;netstandard2.0;net35;net45</TargetFrameworks>
+    <Company>DbUp Contributors</Company>
+    <Product>DbUp</Product>
+    <Copyright>Copyright © DbUp Contributors 2015</Copyright>
+    <TargetFrameworks>net462;netstandard2.0</TargetFrameworks>
     <AssemblyName>dbup-firebird</AssemblyName>
     <RootNamespace>DbUp.Firebird</RootNamespace>
+    <PackageId>dbup-firebird</PackageId>
     <AssemblyOriginatorKeyFile>../dbup.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
     <RepositoryUrl>https://github.com/DbUp/dbup-firebird.git</RepositoryUrl>
-    <Product>dbup_firebird</Product>
-    <PackageId>dbup-firebird</PackageId>
     <PackageIcon>dbup-icon.png</PackageIcon>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net35'">
-    <DefineConstants>$(DefineConstants);NPGSQLv2</DefineConstants>
+    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="dbup-core" Version="4.5.0" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
-    <PackageReference Include="Npgsql" Version="2.2.7" /> <!-- Last version that supports .NET 3.5 -->
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' != 'net35'">
-    <PackageReference Include="Npgsql" Version="3.2.6" />
+    <PackageReference Include="dbup-core" Version="5.0.37"/>
+    <PackageReference Include="FirebirdSql.Data.FirebirdClient" Version="9.1.1"/>
   </ItemGroup>
 
   <ItemGroup>
-    <None Visible="false" Include="../dbup-icon.png" Pack="True" PackagePath="" />
+    <None Visible="false" Include="../dbup-icon.png" Pack="True" PackagePath=""/>
   </ItemGroup>
-
 </Project>

@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{77157734-01D
 		dbup-firebird.sln.DotSettings = dbup-firebird.sln.DotSettings
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "Sample\Sample.csproj", "{E4279382-206F-4CB7-8B75-D8D7A501EF34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8CE634FE-6772-408E-9340-909F6218F8F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CE634FE-6772-408E-9340-909F6218F8F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CE634FE-6772-408E-9340-909F6218F8F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4279382-206F-4CB7-8B75-D8D7A501EF34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4279382-206F-4CB7-8B75-D8D7A501EF34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4279382-206F-4CB7-8B75-D8D7A501EF34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4279382-206F-4CB7-8B75-D8D7A501EF34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{62E5FE92-E288-4E09-964D-F92AF0E49131} = {5DA19CA9-8039-46D6-B474-021943582785}
