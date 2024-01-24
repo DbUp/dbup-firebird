@@ -1,16 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>DbUp makes it easy to deploy and upgrade SQL Server databases. This package adds NewProvider support.</Description>
-    <Title>DbUp NewProvider Support</Title>
+    <Description>DbUp makes it easy to deploy and upgrade SQL Server databases. This package adds Firebird support.</Description>
+    <Title>DbUp Firebird Support</Title>
     <TargetFrameworks>netstandard1.3;netstandard2.0;net35;net45</TargetFrameworks>
-    <AssemblyName>dbup-newprovider</AssemblyName>
-    <RootNamespace>DbUp.NewProvider</RootNamespace>
+    <AssemblyName>dbup-firebird</AssemblyName>
+    <RootNamespace>DbUp.Firebird</RootNamespace>
     <AssemblyOriginatorKeyFile>../dbup.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
-    <RepositoryUrl>https://github.com/DbUp/dbup-newprovider.git</RepositoryUrl>
-    <Product>dbup_newprovider</Product>
-    <PackageId>dbup-newprovider</PackageId>
+    <RepositoryUrl>https://github.com/DbUp/dbup-firebird.git</RepositoryUrl>
+    <Product>dbup_firebird</Product>
+    <PackageId>dbup-firebird</PackageId>
     <PackageIcon>dbup-icon.png</PackageIcon>
   </PropertyGroup>
 
