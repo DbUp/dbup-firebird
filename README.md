@@ -1,20 +1,4 @@
-# Using this Template
-
-1. Create a new Repository in GitHub based on this template
-    - The name should be `dbup-nameofthefirebird`
-    - It should be public
-1. Clone it
-1. Open it in VSCode or other light weight editor that doesn't have strong opinions about solution/project structure (i.e. not Rider/VS)
-1. Search for `Firebird` and replace with the new provider's name, **turning on the preserve case option**
-1. Rename the following:
-    - `dbup-firebird.sln`
-    - `dbup-firebird.sln.DotSettings`
-    - `dbup-firebird\dbup-firebird.csproj`
-    - `dbup-firebird` directory
-1. Run `dotnet build` to ensure it builds
-1. Delete these instructions up to and including the next line, then check in
-
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/DbUp/dbup-firebird/CI/main)](https://github.com/DbUp/dbup-firebird/actions/workflows/main.yml?query=branch%3Amain)
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/DbUp/dbup-firebird/main.yml?branch=main)](https://github.com/DbUp/dbup-firebird/actions/workflows/main.yml?query=branch%3Amain)
 [![NuGet](https://img.shields.io/nuget/dt/dbup-firebird.svg)](https://www.nuget.org/packages/dbup-firebird)
 [![NuGet](https://img.shields.io/nuget/v/dbup-firebird.svg)](https://www.nuget.org/packages/dbup-firebird)
 [![Prerelease](https://img.shields.io/nuget/vpre/dbup-firebird?color=orange&label=prerelease)](https://www.nuget.org/packages/dbup-firebird)
