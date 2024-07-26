@@ -1,5 +1,4 @@
-﻿#if !NETCORE
-using DbUp.Builder;
+﻿using DbUp.Builder;
 using DbUp.Firebird;
 using DbUp.Tests.Common;
 
@@ -20,4 +19,3 @@ public class DatabaseSupportTests : DatabaseSupportTestsBase
                 => new FirebirdTableJournal(connectionManagerFactory, logFactory, tableName)
         );
 }
-#endif
