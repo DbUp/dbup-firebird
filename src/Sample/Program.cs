@@ -13,6 +13,12 @@ namespace FirebirdSampleApplication
             var config = GetConfig();
             string connectionString = config.GetConnectionString("SampleFirebird");
 
+            // If you used `docker compose up` for creating a server and a database, the database already exists.
+            // You can see that a new database can be created using EnsureDatabase.For.FirebirdDatabase(connectionString) by changing the Database parameter (the fdb filename)
+            // in the connectionString in appsettings.json
+            // You can also try to drop a database by using DropDatabase.For.FirebirdDatabase(connectionString);
+            EnsureDatabase.For.FirebirdDatabase(connectionString);
+
             var upgrader =
                 DeployChanges.To
                     .FirebirdDatabase(connectionString)

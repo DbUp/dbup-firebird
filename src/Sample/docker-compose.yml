@@ -1,0 +1,15 @@
+services:
+  firebird:
+    image: jacobalberty/firebird
+    container_name: dbupfirebird
+    hostname: firebird    
+    environment:
+      - ISC_USER=SYSDBA
+      - ISC_PASSWORD=firebirdsample
+      - FIREBIRD_DATABASE=fbsample.fdb
+      - FIREBIRD_USER=sampleuser
+      - FIREBIRD_PASSWORD=firebirdsample
+    ports:
+      - 3050:3050
+    volumes: 
+      - ./firebird/intl/:/firebird/intl
