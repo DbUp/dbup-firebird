@@ -82,11 +82,11 @@ public static class FirebirdExtensions
             if (!File.Exists(builder.Database))
             {
                 FbConnection.CreateDatabase(builder.ToString());
-                logger.WriteInformation("Created database {0}", builder.Database);
+                logger.LogInformation("Created database {0}", builder.Database);
             }
             else
             {
-                logger.WriteInformation("Database {0} already exists", builder.Database);
+                logger.LogInformation("Database {0} already exists", builder.Database);
             }
         }
         else
@@ -96,26 +96,26 @@ public static class FirebirdExtensions
             {
                 conn.Open();
                 conn.Close();
-                logger.WriteInformation("Database {0} already exists", builder.Database);
+                logger.LogInformation("Database {0} already exists", builder.Database);
             }
             catch (FbException ex) when (ex.ErrorCode == FbIoError)
             {
                 FbConnection.CreateDatabase(builder.ToString());
-                logger.WriteInformation("Created database {0}", builder.Database);
+                logger.LogInformation("Created database {0}", builder.Database);
             }
             catch (FbException ex) when (ex.ErrorCode == FbNetworkError)
             {
-                logger.WriteError("Could not access server. The server: {0} is probably not started.", builder.DataSource);
+                logger.LogError("Could not access server. The server: {0} is probably not started.", builder.DataSource);
                 throw;
             }
             catch (FbException)
             {
-                logger.WriteError("Ensure Database: Unknown firebird error when trying to access the server: {0}.", builder.DataSource);
+                logger.LogError("Ensure Database: Unknown firebird error when trying to access the server: {0}.", builder.DataSource);
                 throw;
             }
             catch (Exception)
             {
-                logger.WriteError("Ensure Database: Unknown error when trying to access the server: {0}.", builder.DataSource);
+                logger.LogError("Ensure Database: Unknown error when trying to access the server: {0}.", builder.DataSource);
                 throw;
             }
         }
@@ -140,7 +140,7 @@ public static class FirebirdExtensions
             if (File.Exists(builder.Database))
             {
                 FbConnection.DropDatabase(builder.ToString());
-                logger.WriteInformation("Dropped database {0}", builder.Database);
+                logger.LogInformation("Dropped database {0}", builder.Database);
             }
         }
         else
@@ -150,25 +150,25 @@ public static class FirebirdExtensions
                 //There seems to be an error in the FirebirdClient when trying to drop a database that does not exist.
                 //It gives a NullRefException instead of the expected FbException.
                 FbConnection.DropDatabase(builder.ToString());
-                logger.WriteInformation("Dropped database {0}", builder.Database);
+                logger.LogInformation("Dropped database {0}", builder.Database);
             }
             catch (FbException ex) when (ex.ErrorCode == FbIoError)
             {
-                logger.WriteWarning("Nothing to Drop. No database found.");
+                logger.LogWarning("Nothing to Drop. No database found.");
             }
             catch (FbException ex) when (ex.ErrorCode == FbLockTimeout)
             {
-                logger.WriteError("Can't drop database. Are there still an active connection?");
+                logger.LogError("Can't drop database. Are there still an active connection?");
                 throw;
             }
             catch (FbException)
             {
-                logger.WriteError("Drop Database: Unknown firebird error when trying to access the server: {0}.", builder.DataSource);
+                logger.LogError("Drop Database: Unknown firebird error when trying to access the server: {0}.", builder.DataSource);
                 throw;
             }
             catch (Exception)
             {
-                logger.WriteError("Drop Database: Unknown error when trying to access the server: {0}.", builder.DataSource);
+                logger.LogError("Drop Database: Unknown error when trying to access the server: {0}.", builder.DataSource);
                 throw;
             }
         }
