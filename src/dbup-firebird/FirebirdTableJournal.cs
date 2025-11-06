@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using DbUp.Engine;
 using DbUp.Engine.Output;
@@ -51,6 +51,7 @@ END;";
             }
         }
 
+        /// <inheritdoc/>
         protected override void OnTableCreated(Func<IDbCommand> dbCommandFactory)
         {
             var unquotedTableName = UnquoteSqlObjectName(FqSchemaTableName);
@@ -60,21 +61,25 @@ END;";
             Log().LogInformation($"The {TriggerName(unquotedTableName)} trigger has been created");
         }
 
+        /// <inheritdoc/>
         protected override string DoesTableExistSql()
         {
             return $"select 1 from RDB$RELATIONS where RDB$SYSTEM_FLAG = 0 and RDB$RELATION_NAME = '{UnquotedSchemaTableName}'";
         }
 
+        /// <inheritdoc/>
         protected override string GetInsertJournalEntrySql(string @scriptName, string @applied)
         {
             return $"insert into {FqSchemaTableName} (ScriptName, Applied) values ({scriptName}, {applied})";
         }
 
+        /// <inheritdoc/>
         protected override string GetJournalEntriesSql()
         {
             return $"select ScriptName from {FqSchemaTableName} order by ScriptName";
         }
 
+        /// <inheritdoc/>
         protected override string CreateSchemaTableSql(string quotedPrimaryKeyName)
         {
             return
