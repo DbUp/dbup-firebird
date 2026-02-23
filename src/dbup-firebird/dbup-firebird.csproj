@@ -25,8 +25,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="dbup-core" Version="6.0.15" />
-    <PackageReference Include="FirebirdSql.Data.FirebirdClient" Version="10.3.2" />
+    <PackageReference Include="dbup-core" Version="6.1.1" />
+    <PackageReference Include="FirebirdSql.Data.FirebirdClient" Version="10.3.4" />
   </ItemGroup>
 
   <ItemGroup>
